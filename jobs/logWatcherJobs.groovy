@@ -26,6 +26,7 @@ job ("Seed Job After Update Runner") {
         downstreamParameterized {
             trigger autoRunOnSeedChangeJobsList, {
                 condition("SUCCESS")
+                triggerWithNoParameters()
             }
         }
     }
