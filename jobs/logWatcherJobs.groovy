@@ -16,13 +16,18 @@ job(runOnSeedChange("$basePath/Test Log Watcher")) {
     }
     steps {
         shell('''
-            echo "Doing nothing, and should not fail"
+            ekho "Doing nothing, but should fail"
         ''')
+    }
+
+    publishers {
+        mailer('misterJbee+beehive@gmail.com', true)
     }
 }
 
 job ("Seed Job After Update Runner") {
     publishers {
+        mailer('misterJbee+beehive@gmail.com', true)
         downstreamParameterized {
             trigger autoRunOnSeedChangeJobsList, {
                 condition("SUCCESS")
