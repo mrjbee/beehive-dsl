@@ -12,11 +12,11 @@ folder(basePath) {
 
 job(runOnSeedChange("$basePath/Test Log Watcher")) {
     triggers {
-        scm 'H H * * *'
+        cron 'H H * * *'
     }
     steps {
         shell('''
-            echo "Doing nothing and should notfail"
+            echo "Jenkins username is '$USER'"
         ''')
     }
 
