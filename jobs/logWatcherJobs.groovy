@@ -16,7 +16,7 @@ job(runOnSeedChange("$basePath/Test Log Watcher")) {
     }
     steps {
         shell('''
-            echo "Doing nothing, just a test"
+            ekho "Doing nothing, and should fail"
         ''')
     }
 }
