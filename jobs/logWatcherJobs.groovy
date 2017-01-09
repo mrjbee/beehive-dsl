@@ -32,7 +32,7 @@ job(runOnSeedChange("$basePath/Puzzle Log Watcher")) {
     }
     steps {
         shell("""
-            ([ -e '$fileName' ] && grep -i -C10 -E "ERROR|exception" '$fileName' || echo "No file found") && (exit 1;)
+            [ -e '$fileName' ] || echo "File '$fileName' not found" && (grep -i -A10 -E "ERROR|exception" '$fileName'  && (exit 1;))
         """.trim())
     }
 
