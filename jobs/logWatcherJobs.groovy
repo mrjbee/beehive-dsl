@@ -32,7 +32,8 @@ job(runOnSeedChange("$basePath/Puzzle Log Watcher")) {
     }
     steps {
         shell("""
-
+set +e
+set +v
 if [ -e '$fileName' ]
 then
         GREP_OUT=\$(grep -i -A10 -E "ERROR|exception" '$fileName')
