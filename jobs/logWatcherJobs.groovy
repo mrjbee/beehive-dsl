@@ -1,5 +1,5 @@
 
-def defaultMailTo = "\${DEFAULT_MAIL_TO}"
+def defaultMailTo = System.getenv().DEFAULT_MAIL_TO
 
 List<String> autoRunOnSeedChangeJobsList = []
 def runOnSeedChange = { String jobName ->
