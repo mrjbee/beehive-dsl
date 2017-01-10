@@ -35,6 +35,7 @@ job(runOnSeedChange("$basePath/Backup Log Watcher")) {
 
 set +x
 set +e
+cat /var/log/custom/default/media_backup.log
 GREP_OUT=\$(grep -i -A10 -E "can't|WARN|ERROR|exception" $fileName)
 if [ ! -z "\$GREP_OUT" ]
 then
