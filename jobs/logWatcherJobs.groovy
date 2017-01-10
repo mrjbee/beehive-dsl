@@ -1,3 +1,4 @@
+println System.getenv()
 
 def defaultMailTo = System.getenv("DEFAULT_MAIL_TO")
 
