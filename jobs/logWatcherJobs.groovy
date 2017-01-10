@@ -1,5 +1,3 @@
-println System.getenv()
-
 def defaultMailTo = "${DEFAULT_MAIL_TO}"
 
 List<String> autoRunOnSeedChangeJobsList = []
