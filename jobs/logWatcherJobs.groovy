@@ -1,3 +1,6 @@
+
+def defaultMailTo = "\${DEFAULT_MAIL_TO}"
+
 List<String> autoRunOnSeedChangeJobsList = []
 def runOnSeedChange = { String jobName ->
     autoRunOnSeedChangeJobsList << jobName
@@ -21,7 +24,7 @@ job(runOnSeedChange("$basePath/Test Log Watcher")) {
     }
 
     publishers {
-        mailer('misterJbee+beehive@gmail.com', true)
+        mailer(defaultMailTo, true)
     }
 }
 
@@ -50,7 +53,7 @@ fi
     }
 
     publishers {
-        mailer('misterJbee+beehive@gmail.com', true)
+        mailer(defaultMailTo, true)
     }
 }
 
@@ -83,13 +86,13 @@ fi
     }
 
     publishers {
-        mailer('misterJbee+beehive@gmail.com', true)
+        mailer(defaultMailTo, true)
     }
 }
 
 job ("Seed Job After Update Runner") {
     publishers {
-        mailer('misterJbee+beehive@gmail.com', true)
+        mailer(defaultMailTo, true)
         downstreamParameterized {
             trigger autoRunOnSeedChangeJobsList, {
                 condition("SUCCESS")
