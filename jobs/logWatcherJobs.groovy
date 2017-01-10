@@ -35,7 +35,7 @@ job(runOnSeedChange("$basePath/Backup Log Watcher")) {
 
 set +x
 set +e
-GREP_OUT=\$(grep -i -A10 -E "can't|WARN|ERROR|exception" '$fileName')
+GREP_OUT=\$(grep -i -A10 -E "can't|WARN|ERROR|exception" $fileName)
 if [ ! -z "\$GREP_OUT" ]
 then
     echo "======================== FOUND ==========================="
