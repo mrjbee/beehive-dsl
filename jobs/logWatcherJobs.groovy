@@ -58,7 +58,7 @@ fi
 
 
 job(runOnSeedChange("$basePath/Puzzle Log Watcher")) {
-    def fileName = "/var/log/custom/puzzle/main.log"
+    def fileName = "/var/log/puzzle/main.log"
     triggers {
         cron 'H * * * *'
     }
